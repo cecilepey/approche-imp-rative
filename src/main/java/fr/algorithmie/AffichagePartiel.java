@@ -18,11 +18,31 @@ public class AffichagePartiel {
 		for (int i = 0; i < array.length; i++) {
 
 			if (array[i] % 2 == 0) {
-				System.out.println("Les nombres pairs : " +array[i]);
+				System.out.println("Les nombres pairs : " + array[i]);
 
 			}
 
 		}
+
+		for (int i = 0; i < array.length; i++) {
+
+			if (i % 2 == 0) {
+				System.out.println("Les index pairs : " + array[i]);
+
+			}
+
+		}
+		
+		for (int i = 0; i < array.length; i++) {
+
+			if (array[i] % 2 != 0) {
+				System.out.println("Les nombres impairs : " + array[i]);
+
+			}
+
+		}
+		
+		
 	}
 
 }
