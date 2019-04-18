@@ -34,6 +34,7 @@ public class Interfactif21Batons {
 				nbBatonUser = scanner.nextInt();
 			}
 
+						
 			nbBaton = nbBaton - nbBatonUser;
 
 			System.out.println("Vous avez choisi " + nbBatonUser + " baton(s), il reste " + nbBaton + " baton(s)");
@@ -44,6 +45,12 @@ public class Interfactif21Batons {
 				
 				System.out.println("");
 				System.out.println(" L'ordinateur a choisi " + nbBatonOrdi + " baton(s), il reste " + nbBaton + " baton(s)");
+				
+				if (nbBaton == 1){
+					
+					System.out.println("Vous avez gagné !");
+					break; 
+				}
 
 			}
 			
@@ -55,10 +62,16 @@ public class Interfactif21Batons {
 
 				System.out.println("");
 				System.out.println("L'ordinateur a choisi " + nbBatonOrdi + " baton(s), il reste " + nbBaton + " baton(s)");
+				
+				if (nbBaton == 1){
+					
+					System.out.println("Vous avez perdu !");
+					break; 
+				}
 
 			}
 
-			System.out.println("Comment de batons prenez-vous ? ");
+			System.out.println("Combien de batons prenez-vous ? ");
 
 			nbBatonUser = scanner.nextInt();
 
