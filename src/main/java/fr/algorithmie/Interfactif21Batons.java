@@ -10,19 +10,25 @@ public class Interfactif21Batons {
 		int nbBaton = 21;
 		Random random = new Random();
 
-		// int valeur = random.nextInt(3) + 1;
-
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.println("Il y a 21 batons, chacun prend 1, 2 ou 3 batons, le perdant prend le dernier !");
 		System.out.println("Comment de batons prenez-vous ? ");
 
 		int nbBatonUser = scanner.nextInt();
+		int nbBatonOrdi;
 
-		while (nbBaton > 2) {
+		while (nbBaton > 1) {
 
-			while (nbBatonUser > 3 && nbBatonUser < 0) {
+			while ((nbBatonUser > 3) || (nbBatonUser < 0)) {
 				System.out.println("Vous n'avez pas saisi un nombre valide !");
+				System.out.println("Comment de batons prenez-vous ? ");
+
+				nbBatonUser = scanner.nextInt();
+			}
+			
+			while (nbBatonUser>nbBaton){
+				System.out.println("Vous ne pouvez pas prendre autant de batons");
 				System.out.println("Comment de batons prenez-vous ? ");
 
 				nbBatonUser = scanner.nextInt();
@@ -32,21 +38,33 @@ public class Interfactif21Batons {
 
 			System.out.println("Vous avez choisi " + nbBatonUser + " baton(s), il reste " + nbBaton + " baton(s)");
 
-			int nbBatonOrdi = random.nextInt(3) + 1;
+			if (nbBaton < 4) {
 
-			nbBaton = nbBaton - nbBatonOrdi;
+				nbBatonOrdi = 1;
+				
+				System.out.println("");
+				System.out.println(" L'ordinateur a choisi " + nbBatonOrdi + " baton(s), il reste " + nbBaton + " baton(s)");
 
-			System.out.println("L'ordinateur a choisi " + nbBatonOrdi + " baton(s), il reste " + nbBaton + " baton(s)");
+			}
 			
+			else  {
+
+				nbBatonOrdi = random.nextInt(3) + 1;
+
+				nbBaton = nbBaton - nbBatonOrdi;
+
+				System.out.println("");
+				System.out.println("L'ordinateur a choisi " + nbBatonOrdi + " baton(s), il reste " + nbBaton + " baton(s)");
+
+			}
+
 			System.out.println("Comment de batons prenez-vous ? ");
 
 			nbBatonUser = scanner.nextInt();
 
 		}
-		
-	
-			System.out.println("Le jeu est fini! ");
-		
-	}
 
+		System.out.println("Le jeu est fini! ");
+
+	}
 }
